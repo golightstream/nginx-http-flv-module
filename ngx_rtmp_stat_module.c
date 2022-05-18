@@ -1109,6 +1109,9 @@ ngx_rtmp_stat_play(ngx_http_request_t *r, ngx_chain_t ***lll,
                                       "%D", s->current_time) - bbuf);
 
                         NGX_RTMP_STAT_L("}");
+                        if (ctx->next) {
+                            NGX_RTMP_STAT_L(",");
+                        }
                     }
                 }
             }
